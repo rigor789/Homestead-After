@@ -40,3 +40,16 @@ alias gituser="bash ~/.homestead-after/gituser.sh"
 alias c="clear"
 alias comp="composer"
 alias art="php artisan"
+
+function serve() {
+        if [[ "$1" && "$2" ]]
+        then
+                sudo dos2unix /vagrant/scripts/serve.sh
+                sudo bash /vagrant/scripts/serve.sh "$1" "$2" 80
+        else
+                echo "Error: missing required parameters."
+                echo "Usage: "
+                echo "  serve domain path"
+        fi
+}
+
