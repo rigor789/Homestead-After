@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="jersey-homestead"
+ZSH_THEME="cloud"
 
 # Other misc settings.
 CASE_SENSITIVE="true"
@@ -21,10 +21,6 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Vim love.
-export EDITOR='vim'
-source ~/.clivimrc
-
 # Export path.
 export PATH=${PATH}:/bin
 export PATH=${PATH}:/usr/bin
@@ -38,10 +34,9 @@ export PATH=${PATH}:/home/vagrant/bin
 export PATH=${PATH}:vendor/bin
 
 # Aliases.
-alias zshrc="sudo vim ~/.zshrc"
-alias gitconfig="sudo vim ~/.gitconfig"
+alias zshrc="sudo nano ~/.zshrc"
+alias gitconfig="sudo nano ~/.gitconfig"
 alias gituser="bash ~/.homestead-after/gituser.sh"
-alias vimrc="sudo vim ~/.vimrc"
 alias c="clear"
 alias comp="composer"
 alias art="php artisan"
