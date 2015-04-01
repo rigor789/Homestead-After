@@ -1,3 +1,6 @@
+# Install PhpMyAdmin - Don't judge.
+apt-get install phpmyadmin
+
 # Install ZSH.
 apt-get install zsh -y
 
