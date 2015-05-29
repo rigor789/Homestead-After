@@ -1,6 +1,3 @@
-# Install PhpMyAdmin - Don't judge.
-apt-get install phpmyadmin
-
 # Install ZSH.
 apt-get install zsh -y
 
@@ -18,8 +15,8 @@ cp /home/vagrant/.homestead-after/.zshrc /home/vagrant/.zshrc
 
 # Copy out .gitconfig and setup git user.
 cp /home/vagrant/.homestead-after/.gitconfig /home/vagrant/.gitconfig
-#git config --global user.name "John Madden"
-#git config --global user.email "john@example.com"
+git config --global user.name "rigor789"
+git config --global user.email "rigor789@gmail.com"
 
 # Set default shell.
 chsh -s /usr/bin/zsh vagrant
@@ -27,5 +24,5 @@ chsh -s /usr/bin/zsh vagrant
 # Final message.
 echo '*****'
 echo 'Done installing HomesteadAfter extras <3'
-echo 'Note: Git user has not been set up!'
-echo 'You can set up git user via gituser alias.'
+#echo 'Note: Git user has not been set up!'
+#echo 'You can set up git user via gituser alias.'
