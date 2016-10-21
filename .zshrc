@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="cloud"
 
 # Other misc settings.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 # DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 # DISABLE_LS_COLORS="true"

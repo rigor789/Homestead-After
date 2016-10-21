@@ -1,28 +1,37 @@
-# Install ZSH.
-apt-get install zsh -y
+if [ ! -f /usr/local/extra_homestead_software_installed ]; then
 
-# Clone Oh-My-Zsh.
-git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
+    # We should be super user
+    sudo su -
 
-# Copy Robby's .zshrc over as .zshrc-template for reference purposes only.
-cp /home/vagrant/.oh-my-zsh/templates/zshrc.zsh-template /home/vagrant/.zshrc-template
+    # Add latest node repo...
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
-# Clone Homestead After files.
-git clone git://github.com/rigor789/Homestead-After.git /home/vagrant/.homestead-after
+    # Let's install some tools
+    apt-get install zsh tmux htop nodejs build-essential -y > /dev/null
 
-# Copy out .zshrc and theme.
-cp /home/vagrant/.homestead-after/.zshrc /home/vagrant/.zshrc
+    # Let's clone Oh-My-Zsh
+    git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
 
-# Copy out .gitconfig and setup git user.
-cp /home/vagrant/.homestead-after/.gitconfig /home/vagrant/.gitconfig
-git config --global user.name "rigor789"
-git config --global user.email "rigor789@gmail.com"
+    # Let's clone our Hoestead-After
+    git clone git://github.com/rigor789/Homestead-After.git /home/vagrant/.homestead-after
 
-# Set default shell.
-chsh -s /usr/bin/zsh vagrant
+    # Let's use our .zshrc
+    cp /home/vagrant/.homestead-after/.zshrc /home/vagrant/.zshrc
 
-# Final message.
-echo '*****'
-echo 'Done installing HomesteadAfter extras <3'
-#echo 'Note: Git user has not been set up!'
-#echo 'You can set up git user via gituser alias.'
+    # Change default shell to ZSH
+    chsh -s /usr/bin/zsh vagrant
+
+    # Set up default GIT stuff...
+    cp /home/vagrant/.homestead-after/.gitconfig /home/vagrant/.gitconfig
+    git config --global user.name "rigor789"
+    git config --global user.email "rigor789@gmail.com"
+
+    # Install some global node packages...
+    npm install --global yarn pm2 bunyan
+
+    # Only run this once!
+    touch /usr/local/extra_homestead_software_installed
+
+else
+    echo "Homestead extras are already installed..."
+fi
