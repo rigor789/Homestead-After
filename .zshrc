@@ -40,3 +40,5 @@ alias gituser="bash ~/.homestead-after/gituser.sh"
 alias c="clear"
 alias comp="composer"
 alias art="php artisan"
+
+source .bash_aliases
